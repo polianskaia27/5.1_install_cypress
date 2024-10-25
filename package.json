@@ -3,10 +3,6 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "cy:open": "npx cypress open",
-    "cy:run": "npx cypress run",
-    "cy:dashboard": "npx cypress run --record --key f570935c-2278-4a72-a0a0-31494d1de2ac",
-    "cy:run:load": "npm run cy:run -- --spec 'cypress/e2e/load_sqlverifier.cy.js'"
   },
   "keywords": [],
   "author": "",
