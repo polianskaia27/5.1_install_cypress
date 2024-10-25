@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "cy:dashboard": "npx cypress run --record --key f570935c-2278-4a72-a0a0-31494d1de2ac"
   },
   "keywords": [],
   "author": "",
