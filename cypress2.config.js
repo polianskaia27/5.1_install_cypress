@@ -5,5 +5,9 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
+    baseUrl: 'https://google.com',
+    watchForFileChanges: false,
   },
+  projectId: "dcoyx8",
 });
+
