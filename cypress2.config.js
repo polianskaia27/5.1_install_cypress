@@ -2,14 +2,14 @@ const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
   env: {
-    username: "polalextest",
-    password: "123test"
+    username: "user_student",
+    password: "user"
   },
   e2e: {
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
-    baseUrl: 'https://sqlverifier-live-6e21ca0ed768.herokuapp.com',
+    baseUrl: 'https://sqlverifier-staging-08050d656f7a.herokuapp.com',
     watchForFileChanges: false,
     defaultCommandTimeout: 10000,
   },

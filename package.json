@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "cy:dashboard": "npx cypress run --record --key f570935c-2278-4a72-a0a0-31494d1de2ac"
+    "cy:open:config2": "npx cypress open --config-file cypress2.config.js",
+    "cy:dashboard": "npx cypress run --record --key f570935c-2278-4a72-a0a0-31494d1de2ac",
+    "cy:dashboard:config2": "npx cypress run --record --key f570935c-2278-4a72-a0a0-31494d1de2ac --config-file cypress2.config.js"
   },
   "keywords": [],
   "author": "",
@@ -13,3 +15,4 @@
     "cypress": "^13.15.0"
   }
 }
+

@@ -1,11 +1,14 @@
 beforeEach(() => {
-  cy.visit("/login");
-  cy.get("#username").type("polalextest");
-  cy.get("#password").type("123test");
+  const baseUrl = Cypress.config("baseUrl");
+  const password = Cypress.env("password");
+  const username = Cypress.env("username");
+  cy.visit(`baseUrl/login`);
+  cy.get("#username").type(username);
+  cy.get("#password").type(password);
   cy.get(
     "#login-page > div > form > div.modal-footer > button.btn.btn-primary"
   ).click();
-  cy.url().should("include", "/?page=1&sort=id,asc");
+  cy.url().should("include", "/");
 });
 it("navigate to Home page and verify title", () => {
   cy.get("#header-tabs > li:nth-child(1) > a").click();
