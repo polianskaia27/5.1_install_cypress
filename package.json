@@ -5,7 +5,10 @@
   "scripts": {
     "cy:open:config2": "npx cypress open --config-file cypress2.config.js",
     "cy:dashboard": "npx cypress run --record --key f570935c-2278-4a72-a0a0-31494d1de2ac",
-    "cy:dashboard:config2": "npx cypress run --record --key f570935c-2278-4a72-a0a0-31494d1de2ac --config-file cypress2.config.js"
+    "cy:dashboard:config2": "npx cypress run --record --key f570935c-2278-4a72-a0a0-31494d1de2ac --config-file cypress2.config.js",
+    "cy:dashboard:chrome": "npx cypress run --browser chrome --record --key f570935c-2278-4a72-a0a0-31494d1de2ac",
+    "cy:dashboard:electron": "npx cypress run --browser electron --record --key f570935c-2278-4a72-a0a0-31494d1de2ac",
+    "cy:dashboard:chrome:electron": "npm run cy:dashboard:chrome && npm run cy:dashboard:electron"
   },
   "keywords": [],
   "author": "",
