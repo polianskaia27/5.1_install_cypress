@@ -23,3 +23,16 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add("chekTheElement", (selector, text) => {
+  cy.get(selector).should("be.visible").should("contain", text);
+});
+
+Cypress.Commands.add("checkUrl", (url) => {
+  cy.url().should("include", url);
+});
+
+Cypress.Commands.add("getToThePage", (firstSelector, secondSelector) => {
+  cy.get(firstSelector).click();
+  cy.get(secondSelector).click();
+});
