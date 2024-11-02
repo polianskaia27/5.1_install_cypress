@@ -64,15 +64,15 @@ Cypress.Commands.add("changePassword", (username, password, newPassword) => {
     expect(response.status).to.equal(200);
     const token = response.body.id_token;
     cy.log(token);
-    cy.log(newPassword, password);
-    cy.login(username, newPassword);
+    cy.log(password, newPassword);
+    cy.login(username, password);
     cy.request({
       method: "POST",
       headers: {
         authorization: `Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwb2xhbGV4dGVzdCIsImV4cCI6MTczMDYwNzE1MywiYXV0aCI6IlJPTEVfVVNFUl9TVFVERU5UIiwiaWF0IjoxNzMwNTIwNzUzfQ.4w1ac7vVHh7XQ9oH8re0pNYkJau8OTTvjuQjG7aUbC3KqyfNky6b0Cawj5X-FFbZNbsn5G6pHJ7W5wRyyKxiuQ`,
       },
       url: "https://sqlverifier-live-6e21ca0ed768.herokuapp.com/api/account/change-password",
-      body: { currentPassword: newPassword, newPassword: password },
+      body: { currentPassword: password, newPassword: newPassword },
     }).then((response) => {
       expect(response.status).to.equal(200);
     });
