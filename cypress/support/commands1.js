@@ -48,7 +48,6 @@ Cypress.Commands.add("chekTheElement", (selector, text) => {
 });
 
 Cypress.Commands.add("changePassword", (username, password, newPassword) => {
-  let authToken;
   cy.request({
     method: "POST",
     headers: {
@@ -61,17 +60,15 @@ Cypress.Commands.add("changePassword", (username, password, newPassword) => {
       password: "admin_automation",
       rememberMe: true,
     },
-  }).then((response) => {
-    expect(response.status).to.equal(200);
-    authToken = response.body.id_token;
+  }).then((responce) => {
+    expect(responce.status).to.equal(200);
+    Cypress.env("idToken", responce.body.id_token);
     cy.log(password, newPassword);
     cy.login(username, password);
     cy.request({
       method: "POST",
       headers: {
-        Authorization: `Bearer ${authToken}`,
-        accept: "*/*",
-        "Content-Type": "application/json",
+        authorization: `Bearer ${Cypress.env("idToken")}`,
       },
       url: "https://sqlverifier-live-6e21ca0ed768.herokuapp.com/api/account/change-password",
       body: { currentPassword: password, newPassword: newPassword },
