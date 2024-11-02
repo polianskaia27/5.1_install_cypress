@@ -36,3 +36,7 @@ Cypress.Commands.add("getToThePage", (firstSelector, secondSelector) => {
   cy.get(firstSelector).click();
   cy.get(secondSelector).click();
 });
+
+Cypress.Commands.add("enterText", (selector, text) => {
+  cy.get(selector).type(text);
+});

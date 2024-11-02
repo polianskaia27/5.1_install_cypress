@@ -1,0 +1,67 @@
+[
+  {
+   "username": "user12345",
+   "email": "12345@gmail.com",
+   "password": "12345test"
+ },
+ {
+   "username": "user12345",
+   "email": "12345@gmail.com",
+   "password": "123"
+ },
+ {
+  "username": "user12345",
+  "email": "12345@gmail.com",
+  "password": "qwertyuiopasdfghjklzxcvbnm1234567890123456789012341"
+ },
+ {
+  "username": "user12345",
+  "email": "@gmail.com",
+  "password": "12345test"
+ },
+ {
+  "username": "user12345",
+  "email": "12345@gmail..com",
+  "password": "12345test"
+ },
+ {
+  "username": "user12345",
+  "email": "123 45@gmail.com",
+  "password": "12345test"
+ },
+ {
+  "username": "user12345",
+  "email": "12345@gma il.com",
+  "password": "12345test"
+ },
+ {
+  "username": "user12345",
+  "email": "12345@gmail.co'm",
+  "password": "12345test"
+ },
+ {
+  "username": "user12345",
+  "email": "12345.gmail.com",
+  "password": "12345test"
+ },
+ {
+  "username": "",
+  "email": "12345@gmail.com",
+  "password": "12345test"
+ },
+ {
+  "username": "qwertyuiopasdfghjklzxcvbnm1234567890123456789012341",
+  "email": "12345.gmail.com",
+  "password": "12345test"
+ },
+ {
+  "username": "'№%:,.;",
+  "email": "12345.gmail.com",
+  "password": "12345test"
+ },
+ {
+  "username": "123 45",
+  "email": "12345.gmail.com",
+  "password": "12345test"
+ }
+]
