@@ -1,0 +1,42 @@
+[
+    {
+       "username": "polalextest",
+       "password": "123test"
+    },
+    {
+       "username": "polalextest",
+       "password": "1234test"
+    },
+    {
+      "username": "polalextest",
+      "password": ""
+    },
+    {
+      "username": "polalextest",
+      "password": " "
+    },
+    {
+      "username": "polalextest",
+      "password": " 123test "
+    },
+    {
+      "username": "polalextest1",
+      "password": "123test"
+    },
+    {
+      "username": "",
+      "password": "123test"
+    },
+    {
+      "username": " ",
+      "password": "123test"
+    },
+    {
+      "username": " polalextest ",
+      "password": "123test"
+     },
+     {
+      "username": "123test",
+      "password": "polalextest"
+     }
+  ]

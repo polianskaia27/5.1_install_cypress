@@ -1,0 +1,20 @@
+{   "urlLogin": "/?page=1&sort=id,asc",
+    "elementsMenu": {
+      "accountMenu": "#account-menu > a",
+      "accountMenuSignIn": "#account-menu > div > a:nth-child(1)",
+      "accountMenuPassword": "#account-menu > div > a:nth-child(2)",
+      "accountMenuSignOut": "#account-menu > div > a:nth-child(3)",
+      "swaggerMenu": "#docs-menu > a > span"
+    },
+    "loginForm": {
+      "usernameField": "#username",
+      "passwordField": "#password",
+      "loginButton": "[data-cy='submit']"
+    },
+    "passwordChangeForm": {
+      "currentPasswordField": "#currentPassword",
+      "newPasswordField": "#newPassword",
+      "confirmNewPasswordField": "#confirmPassword",
+      "saveButton": "#password-form > button"
+    }
+  }
