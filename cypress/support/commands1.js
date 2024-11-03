@@ -1,28 +1,3 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 const loginElements = require("../fixtures/pages/login_elements.json");
 
 Cypress.Commands.add("login", (username, password) => {
@@ -47,7 +22,7 @@ Cypress.Commands.add("chekTheElement", (selector, text) => {
   cy.get(selector).should("be.visible").should("contain", text);
 });
 
-Cypress.Commands.add("changePassword", (username, password, newPassword) => {
+Cypress.Commands.add("authorization", (username, password) => {
   cy.request({
     method: "POST",
     headers: {
@@ -56,24 +31,27 @@ Cypress.Commands.add("changePassword", (username, password, newPassword) => {
     },
     url: "/api/authenticate",
     body: {
-      username: "admin_automation",
-      password: "admin_automation",
+      username: username,
+      password: password,
       rememberMe: true,
     },
-  }).then((responce) => {
-    expect(responce.status).to.equal(200);
-    Cypress.env("idToken", responce.body.id_token);
-    cy.log(password, newPassword);
-    cy.login(username, password);
-    cy.request({
-      method: "POST",
-      headers: {
-        authorization: `Bearer ${Cypress.env("idToken")}`,
-      },
-      url: "https://sqlverifier-live-6e21ca0ed768.herokuapp.com/api/account/change-password",
-      body: { currentPassword: password, newPassword: newPassword },
-    }).then((response) => {
-      expect(response.status).to.equal(200);
-    });
+  }).then((response) => {
+    expect(response.status).to.equal(200);
+    Cypress.env("idTokenUser", response.body.id_token);
   });
+});
+
+Cypress.Commands.add("changePassword", (password, newPassword) => {
+  cy.log(Cypress.env("idTokenUser"));
+  cy.request({
+    method: "POST",
+    url: "/api/account/change-password",
+    headers: {
+      authorization: `Bearer ${Cypress.env("idTokenUser")}`,
+    },
+    body: { currentPassword: password, newPassword: newPassword },
+  });
+  // .then((response) => {
+  // expect(response.status).to.equal(200);
+  // });
 });
