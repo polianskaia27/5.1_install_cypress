@@ -19,7 +19,7 @@ describe("Post and edit tasks", () => {
       expect(response.body.title).to.exist;
     });
   });
-  it.only("Edit the task", () => {
+  it("Edit the task", () => {
     cy.postNewTask(title, text, answer).then(() => {
       cy.editTheTask(Cypress.env("taskId"), text, answer, title).then(
         (response) => {
