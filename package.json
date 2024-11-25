@@ -11,7 +11,7 @@
     "cy:dashboard:spec1": "npx cypress run --record --key 3de62067-c51c-4c2b-be83-1e6eb2f499c7 --spec cypress/e2e/change_password.cy.js",
     "cy:dashboard:spec2": "npx cypress run --record --key 3de62067-c51c-4c2b-be83-1e6eb2f499c7 --spec cypress/e2e/tasks.cy.js",
     "cy:dashboard:allbrowsers": "npm run cy:dashboard:chrome && npm run cy:dashboard:electron",
-    "cy:dashboard:parallel": "npm run cy:dashboard:spec1 -- --browser chrome --group chrome --ci-build-id --parallel  && npm run cy:dashboard:spec2 -- --browser electron --group electron --ci-build-id --parallel"
+    "cy:dashboard:parallel": "npm run cy:dashboard:spec1 -- --browser chrome --group chrome --ci-build-id '${BUILD_NUMBER}' --parallel  && npm run cy:dashboard:spec2 -- --browser electron --group electron --ci-build-id '${BUILD_NUMBER}' --parallel"
   },
   "keywords": [],
   "author": "",
