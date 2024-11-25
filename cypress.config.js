@@ -14,5 +14,5 @@ module.exports = defineConfig({
     watchForFileChanges: false,
     defaultCommandTimeout: 10000,
   },
-  projectId: "dcoyx8",
+  projectId: "suoap9",
 });

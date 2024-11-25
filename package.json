@@ -4,13 +4,14 @@
   "main": "index.js",
   "scripts": {
     "cy:open:config2": "npx cypress open --config-file cypress2.config.js",
-    "cy:dashboard": "npx cypress run --record --key f570935c-2278-4a72-a0a0-31494d1de2ac",
-    "cy:dashboard:config2": "npx cypress run --record --key f570935c-2278-4a72-a0a0-31494d1de2ac --config-file cypress2.config.js",
+    "cy:dashboard": "npx cypress run --record --key 3de62067-c51c-4c2b-be83-1e6eb2f499c7",
+    "cy:dashboard:config2": "npx cypress run --record --key 3de62067-c51c-4c2b-be83-1e6eb2f499c7 --config-file cypress2.config.js",
     "cy:run:chrome": "npx cypress run --browser chrome",
     "cy:run:electron": "npx cypress run --browser electron",
-    "cy:dashboard:chrome": "npx cypress run --browser chrome --record --key f570935c-2278-4a72-a0a0-31494d1de2ac",
-    "cy:dashboard:electron": "npx cypress run --browser electron --record --key f570935c-2278-4a72-a0a0-31494d1de2ac",
-    "cy:dashboard:chrome:electron": "npm run cy:dashboard:chrome && npm run cy:dashboard:electron"
+    "cy:dashboard:spec1": "npx cypress run --record --key 3de62067-c51c-4c2b-be83-1e6eb2f499c7 --spec cypress/e2e/header.cy.js",
+    "cy:dashboard:spec2": "npx cypress run --record --key 3de62067-c51c-4c2b-be83-1e6eb2f499c7 --spec cypress/e2e/tasks.cy.js",
+    "cy:dashboard:allbrowsers": "npm run cy:dashboard:chrome && npm run cy:dashboard:electron",
+    "cy:dashboard:parallel": "npm run cy:dashboard:spec1 -- --browser chrome --group chrome --ci-build-id --parallel  && npm run cy:dashboard:spec2 -- --browser electron --group electron --ci-build-id --parallel"
   },
   "keywords": [],
   "author": "",
